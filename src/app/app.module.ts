@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import { DashboardComponent} from './dashboard/dashboard.component'
 const appRoutes: Routes = [
   {
     path:'',
@@ -17,6 +17,10 @@ const appRoutes: Routes = [
   {
     path:'signup',
     component:SignupComponent
+  },
+  {
+    path:'dashboard',
+    component:DashboardComponent
   }
 
 ]
@@ -24,7 +28,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
