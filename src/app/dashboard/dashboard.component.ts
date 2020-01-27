@@ -43,8 +43,8 @@ export class DashboardComponent implements OnInit {
       },
       {
         owner: 'username3',
-        image: '../assets/karaoke.jpg',
-        title: 'Karaoke',
+        image: '../assets/tent.jpg',
+        title: 'Tent',
         category: 'Sample',
         brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
         price: 100.00,
