@@ -17,3 +17,14 @@
 .center{
     text-align: center;
 }
+.name{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.image{
+    height: 250px;
+    width: auto;
+}
+.sizemodal{
+    padding: 50px;
+}
