@@ -45,21 +45,36 @@
                 </button>
                 <h4 class="modal-title w-100" id="myModalLabel">{{posts.title}}</h4>
             </div>
-            <div class="modal-body">
-                <img class="card-img-right" [src]="posts.image" alt="Card image cap">
-                <h4 class="my-3">{{posts.title}}</h4>
-                <p class="card-text text-uppercase mb-2">{{posts.description}}</p>
-                <p class="card-text text-uppercase mb-2">PHP {{posts.price}}</p>
-            </div>
-
             <div class="modal-footer">
+                <div>
+                    <img class="card-img-top" [src]="posts.image" alt="Card image cap">
+                </div>
+                <div>
+                    <h5 class="my-1">• PHP {{posts.price}}</h5>
+                    <p class="card-text mb-1">• {{posts.category}}</p>
+                    <p class="card-text mb-1">• {{posts.brand}}</p>
+                    <p class="card-text mb-1">• {{posts.description}}</p>
+                </div>
+            </div>
+            <hr>
+            <div *ngIf="yesOrNo" class = "center">
                 <h3>Are you interested?</h3>
-                <hr>
-                <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Yes</button>
+
+                <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="yesClicked()"
+                    mdbWavesEffect>Yes</button>
                 <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
                     (click)="basicModal.hide()" mdbWavesEffect>No</button>
             </div>
-            <div></div>
+            <div *ngIf="yes" class = "center">
+                <h3>Contact this person: </h3>
+                <mdb-icon fas icon="phone"></mdb-icon>
+                <p class="card-text mb-1"> 09231615542</p>
+                <mdb-icon fas icon="envelope"></mdb-icon>
+                <p class="card-text mb-1"> anna@gmail.com</p>
+                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="back()"
+                    mdbWavesEffect>Hide contact</button>
+            </div>
+
         </div>
     </div>
 </div>
@@ -80,9 +95,9 @@
                             <img class="card-img-top" [src]="posts.image" alt="Card image cap">
                             <!-- Card content -->
                             <div class="card-body">
-                                <h5 class="my-3">{{posts.title}}</h5>
-                                <p class="card-text text-uppercase mb-3">{{posts.description}}</p>
-                                <p class="card-text text-uppercase mb-3">PHP {{posts.price}}</p>
+                                <h5 class="my-3"> {{posts.title}}</h5>
+                                <p class="card-text mb-1">{{posts.description}}</p>
+                                <p class="card-text mb-1">PHP {{posts.price}}</p>
                             </div>
                         </a>
                         <!-- Card -->

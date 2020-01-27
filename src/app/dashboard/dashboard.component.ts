@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  yes = false
+  yesOrNo = true
   posts = 
     {
     owner:'',
     image: '../assets/shovel.jpg',
     title: 'Shovel',
     category:'Sample',
-    brand:'Sample Brand',
+    brand:'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
     price: 100.00,
     description:'Sample Description'
   }
@@ -22,6 +24,14 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  yesClicked(){
+    this.yesOrNo = false
+    this.yes = true
+  }
+  back(){
+    this.yesOrNo = true
+    this.yes = false
   }
 
 }
