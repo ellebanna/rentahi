@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Posts } from '../post-form';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,30 +9,59 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   yes = false
   yesOrNo = true
-  posts = 
-    {
-    owner:'',
-    image: '../assets/shovel.jpg',
-    title: 'Shovel',
-    category:'Sample',
-    brand:'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-    price: 100.00,
-    description:'Sample Description'
+
+  public posts: Array<Posts>
+
+  constructor() {
+    this.posts = [
+      {
+        owner: 'hanna',
+        image: '../assets/shovel.jpg',
+        title: 'Shovel',
+        category: 'Sample',
+        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
+        price: 100.00,
+        description: 'Sample Description'
+      },
+      {
+        owner: 'mibel',
+        image: '../assets/curler.jpg',
+        title: 'Hair Curler',
+        category: 'Sample',
+        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
+        price: 100.00,
+        description: 'Sample Description'
+      },
+      {
+        owner: 'nabelle',
+        image: '../assets/tent.jpg',
+        title: 'Camping Tent',
+        category: 'Sample',
+        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
+        price: 100.00,
+        description: 'Sample Description'
+      },
+      {
+        owner: 'username3',
+        image: '../assets/tent.jpg',
+        title: 'Tent',
+        category: 'Sample',
+        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
+        price: 100.00,
+        description: 'Sample Description'
+      },
+    ]
   }
-
-  
-
-  constructor() { }
 
   ngOnInit() {
   }
-  
-  yesClicked(){
+
+  yesClicked() {
     this.yesOrNo = false
     this.yes = true
   }
 
-  back(){
+  back() {
     this.yesOrNo = true
     this.yes = false
   }
