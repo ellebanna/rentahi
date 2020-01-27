@@ -26,10 +26,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   yesClicked(){
     this.yesOrNo = false
     this.yes = true
   }
+
   back(){
     this.yesOrNo = true
     this.yes = false
