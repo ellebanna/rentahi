@@ -4,23 +4,28 @@
     <section>
         <!--Tab panels-->
         <div class="tab-content mb-5">
-            <!--Panel 1-->  
+            <!--Panel 1-->
             <div class="tab-pane fade show in active" id="panel31" role="tabpanel">
                 <!-- Grid row -->
                 <div class="row">
-                    <h1>My Post</h1>
-                    <div class="col-md-12 col-lg-4" *ngFor="let accounts of dataArr">
+                    <!-- Grid column -->
+                    <div class="col-md-12 col-lg-4" *ngFor="let post of dataArr">
+                        <!-- Card -->
                         <a class="card hoverable mb-4" (click)="basicModal.show()" mdbWavesEffect>
+                            <!-- Card image -->
                             <p class="card-text mb-1 name">
-                                <mdb-icon far icon="user-circle"></mdb-icon> {{accounts.username.post}}
+                                <mdb-icon far icon="user-circle"></mdb-icon> {{post.owner}}
                             </p>
                             <img class="card-img-top image" [src]="post.image" alt="Card image cap">
+                            <!-- Card content -->
                             <div class="card-body">
-                                <h5 class="my-3"> {{accounts.title.post}}</h5>
-                                <p class="card-text mb-1">{{accounts.description.post}}</p>
+                                <h5 class="my-3"> {{post.title}}</h5>
+                                <p class="card-text mb-1">{{post.description}}</p>
                                 <p class="card-text mb-1">PHP {{post.price}}</p>
                             </div>
                         </a>
+                        <!-- Card -->
+                        <!-- Modal -->
                         <div mdbModal #basicModal="mdbModal" class="modal fade " tabindex="-1" role="dialog"
                             aria-labelledby="myBasicModalLabel" aria-hidden="true">
                             <div class="modal-dialog " role="document">
@@ -31,26 +36,50 @@
                                             <span aria-hidden="true">×</span>
                                         </button>
                                         <h4 class="modal-title w-100" id="myModalLabel">{{post.title}}</h4>
+                                        <!-- <h4 class="modal-title w-100" >Timeline</h4> -->
+
                                     </div>
                                     <div class="modal-footer">
-                                        <div>
-                                            <img class="card-img-top " [src]="post.image" alt="Card image cap">
-                                        </div>
-                                        <div>
-                                            <h5 class="my-1">• PHP {{post.price}}</h5>
-                                            <p class="card-text mb-1">• {{post.category}}</p>
-                                            <p class="card-text mb-1">• {{post.brand}}</p>
-                                            <p class="card-text mb-1">• {{post.description}}</p>
+                                        <div class="card-img-top ">
+                                            <div class="md-form">
+                                                <!-- <mdb-date-picker name="mydate" [options]="myDatePickerOptions" [placeholder]="'Selected date'" [(ngModel)]="model"
+                                                required></mdb-date-picker> -->
+                                                <form class="datestarted">
+                                                    Date Started:
+                                                    <input type="date" name="bday">
+                                                    <br>
+                                        
+                                                </form>
+                                                <br>
+                                                <form class="dateended">
+                                                    Date Ended:
+                                                    <input type="date" name="bday">
+                                                </form>
+                                            </div>  
                                         </div>
                                     </div>
-                                    <hr>
-                                    
+                                    <div *ngIf="yesOrNo" class="center">
+                                        <button type="button" mdbBtn color="primary" class="relative waves-light"
+                                            (click)="yesClicked()" mdbWavesEffect>Available</button>
+                                        <button type="button" mdbBtn color="secondary" class="waves-light"
+                                            aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Not Available</button>
+                                        <br><br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- End of Modal -->
                     </div>
+                    <!-- Grid column -->
                 </div>
+                <!-- Grid row -->
             </div>
+            <!--Panel 1-->
         </div>
+        <!--Tab panels-->
     </section>
+    <!-- Section -->
 </div>
+<script src="datepicker.js"></script>
+
+ 
