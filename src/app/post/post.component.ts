@@ -46,8 +46,7 @@ export class PostComponent implements OnInit {
   post(form) {
     console.log("user post ", this.user)
     console.log("sahfjsahdfghdugjhhdfg ", this.u)
-    
-
+  
     this.tobePassed={
       username: this.u,
       image: this.image1,
@@ -58,6 +57,7 @@ export class PostComponent implements OnInit {
       description:this.description1
     }
     this.posts.push(this.tobePassed)
+    console.log("post ",this.posts)
     form.form.reset()
   }
 
