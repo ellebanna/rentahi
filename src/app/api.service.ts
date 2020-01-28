@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { UserInformation } from './signup/users';
-import { itemModel } from './dashboard/item'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,31 +17,16 @@ const httpOptions = {
 })
 
 export class ApiService {
-  apiItem = 'http://localhost:3436/'
-  apiUrl = "http://fakerestapi.azurewebsites.net/api/Users";
+  apiUrl = "localhost:3000";
 
   constructor(private http: HttpClient) { }
 
   shouldGetUser(): Observable<any> {
-    return this.http.get<UserInformation[]>(this.apiUrl);
-  }
-
-  shouldGetAllItem(): Observable<any> {
-    return this.http.get<itemModel[]>(this.apiItem);
+    return this.http.get<UserInformation[]>(this.apiUrl+"/data");
   }
 
   shouldCheckUsername(id: any): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`, httpOptions)
   }
-
-
-  // checkItemOfUser(id: any): Observable<any> {
-  //   return this.http.get<any>(`${this.apiUrl}/${id}`, httpOptions)
-  // }
-
-  shouldReturnUserPost(accounts:any){
-    return this.http.get<any>(`${this.apiItem}/${accounts}`, httpOptions)
-  }
-
 
 }

@@ -12,13 +12,12 @@ export class DashboardComponent implements OnInit {
   showNotification: boolean;
   dataArr: any[] = []
 
-
   constructor(private dataService: ApiService) {
 
   }
 
   ngOnInit() {
-    return this.dataService.shouldGetAllItem().subscribe(data => (this.dataArr = data));
+   
   }
 
   yesClicked() {
@@ -30,10 +29,6 @@ export class DashboardComponent implements OnInit {
     this.yesOrNo = true
     this.yes = false;
     this.showNotification = true;
-
-    // setTimeout(function () {
-    //   this.showNotification = true;
-    // }, 3000);
   }
 
 }

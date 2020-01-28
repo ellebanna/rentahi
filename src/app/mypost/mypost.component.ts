@@ -29,7 +29,7 @@ export class MypostComponent implements OnInit {
   }
 
   ngOnInit() {
-    return this.dataService.shouldGetAllItem().subscribe(data => (this.dataArr = data));
+    
   }
 
   yesClicked() {
@@ -41,10 +41,6 @@ export class MypostComponent implements OnInit {
     this.yesOrNo = true
     this.yes = false;
     this.showNotification = true;
-
-    // setTimeout(function () {
-    //   this.showNotification = true;
-    // }, 3000);
   }
 
 }
