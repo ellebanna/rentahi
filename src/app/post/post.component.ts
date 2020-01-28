@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Posts } from '../post-form';
 import { UserInformation } from '../signup/users';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-post',
@@ -12,22 +15,24 @@ import { UserInformation } from '../signup/users';
 export class PostComponent implements OnInit {
   id: number
   public user: Array<any> = []
-  public posts: Array<Posts> =[]
-  public user2:Array<UserInformation>=[]
-  public tobePassed:Posts;
-  public u:string
+  public posts: Array<Posts> = []
+  public user2: Array<UserInformation> = []
+  public tobePassed: Posts;
+  public u: string
   showpost = false
 
 
 
   image1: File
-  category1: String
-  title1: String
-  brand1: String
+  category1: string
+  title1: string
+  brand1: string
   price1: number
-  description1: String
+  description1: string
 
-  constructor(private route: ActivatedRoute, private dataService: ApiService) { }
+  public feeds: []
+
+  constructor(private http: HttpClient, private dataService: ApiService) { }
 
   ngOnInit() {
     this.fetch()
@@ -38,10 +43,11 @@ export class PostComponent implements OnInit {
       this.user.push(data)
     })
   }
-  onSubmit(form) {
+  post(form) {
     console.log("user post ", this.user)
-    console.log("sahfjsahdfghdugjhhdfg ",this.u)
+    console.log("sahfjsahdfghdugjhhdfg ", this.u)
     
+
     this.tobePassed={
       username: this.u,
       image: this.image1,
@@ -52,13 +58,10 @@ export class PostComponent implements OnInit {
       description:this.description1
     }
     this.posts.push(this.tobePassed)
-    console.log("posts ", this.posts)
-
-
     form.form.reset()
   }
 
-  
-  
+
+
 
 }

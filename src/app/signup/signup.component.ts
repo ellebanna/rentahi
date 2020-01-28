@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
 
 
   }
-  onSignUp  ()  {
+  onSignUp() {
 
     alert('Next step is to login to make sure you can login...')
     this.users = {
@@ -42,13 +42,9 @@ export class SignupComponent implements OnInit {
       username: this.username,
       password: this.password
     }
-    this.dataService.UserRegistration(this.users).subscribe(resp =>{
-      console.log("Successfull")
-      console.log("status",resp)
-    });
-      // this.userList.push(this.users)
-      console.log(this.users);
-      this.router.navigate([''])
-    
+    this.userList.push(this.users)
+    console.log(this.users);
+    this.router.navigate([''])
+
   }
 }

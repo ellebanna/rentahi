@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   dataArr: any[] = []
   user = false
   public loginuser: String;
-  data: any
+  // data: any
 
   constructor(private router: Router, private dataService: ApiService) {
 
@@ -25,26 +25,26 @@ export class LoginComponent implements OnInit {
 
   }
 
-  // login(id = 1) {
-  //   this.dataService.shouldCheckUsername(id).subscribe(response => {
-  //     if (response.UserName == this.username && response.Password == this.password) {
-  //       console.log("login ",this.username)
-  //       this.router.navigate(['/dashboard'])
-  //     } else {
-  //       alert('Account Not Found')
-  //     }
-  //   })
-
-  // }
-  login() {
-    this.data = {
-      userName: this.username,
-      password: this.password
-    }
-    this.dataService.LoginService(this.data).subscribe(resp => {
-      console.log("Successfull")
+  login(id = 1) {
+    this.dataService.shouldCheckUsername(id).subscribe(response => {
+      if (response.UserName == this.username && response.Password == this.password) {
+        console.log("login ",this.username)
+        this.router.navigate(['/dashboard'])
+      } else {
+        alert('Account Not Found')
+      }
     })
-    console.log("login ", this.username)
-    this.router.navigate(['/dashboard'])
+
   }
+  // login() {
+  //   this.data = {
+  //     userName: this.username,
+  //     password: this.password
+  //   }
+  //   this.dataService.LoginService(this.data).subscribe(resp => {
+  //     console.log("Successfull")
+  //   })
+  //   console.log("login ", this.username)
+  //   this.router.navigate(['/dashboard'])
+  // }
 }
