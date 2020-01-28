@@ -13,58 +13,16 @@ export class DashboardComponent implements OnInit {
   public user: Array<any> = []
   yes = false
   yesOrNo = true
+  showNotification: boolean;
+  dataArr: any[] = []
 
-  public posts: Array<Posts>
 
-  constructor(private route : ActivatedRoute,private dataService: ApiService) {
-    this.posts = [
-      {
-        username: 'hanna',
-        image: '../assets/shovel.jpg',
-        title: 'Shovel',
-        category: 'Sample',
-        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-        price: 100.00,
-        description: 'Sample Description'
-      },
-      {
-        username: 'mibel',
-        image: '../assets/curler.jpg',
-        title: 'Hair Curler',
-        category: 'Sample',
-        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-        price: 100.00,
-        description: 'Sample Description'
-      },
-      {
-        username: 'nabelle',
-        image: '../assets/tent.jpg',
-        title: 'Camping Tent',
-        category: 'Sample',
-        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-        price: 100.00,
-        description: 'Sample Description'
-      },
-      {
-        username: 'username3',
-        image: '../assets/tent.jpg',
-        title: 'Tent',
-        category: 'Sample',
-        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-        price: 100.00,
-        description: 'Sample Description'
-      },
-    ]
+  constructor(private dataService: ApiService) {
+
   }
 
   ngOnInit() {
-    this.fetch()
-  }
-  fetch(id=1){
-    this.dataService.shouldCheckUsername(id).subscribe((data)=>{
-      console.log(data)
-      this.user.push(data)
-    })
+    return this.dataService.shouldGetAllItem().subscribe(data => (this.dataArr = data));
   }
 
   yesClicked() {
@@ -76,7 +34,13 @@ export class DashboardComponent implements OnInit {
 
   back() {
     this.yesOrNo = true
-    this.yes = false
+    this.yes = false;
+    this.showNotification = true;
+
+    // setTimeout(function () {
+    //   this.showNotification = true;
+    // }, 3000);
+
   }
   
 

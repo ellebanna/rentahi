@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserInformation } from './users'
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,15 +19,17 @@ export class SignupComponent implements OnInit {
   public userList:any[]=[]
   showLogin: boolean = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private dataService: ApiService) {
     // this.users=[]
     this.users = new UserInformation()
   }
 
   ngOnInit() {
-    this.showLogin = false;
+   
+    
   }
   onSignUp() {
+    console.log(this.dataArr);
     alert('Next step is to login to make sure you can login...')
     this.users = {
       firstname:this.firstname,

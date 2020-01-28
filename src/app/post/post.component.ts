@@ -14,6 +14,7 @@ export class PostComponent implements OnInit {
   public user: Array<any> = []
   public posts: Array<Posts> =[]
   public user2:Array<UserInformation>=[]
+  public tobePassed:Posts;
   public u:string
 
 
@@ -39,11 +40,21 @@ export class PostComponent implements OnInit {
     console.log("user post ", this.user)
     console.log("sahfjsahdfghdugjhhdfg ",this.u)
     
-    this.posts.push(form.form.value)
+    this.tobePassed={
+      username: this.u,
+      image: this.image1,
+      category:this.category1,
+      title: this.title1,
+      brand: this.brand1,
+      price: this.price1,
+      description:this.description1
+    }
+    this.posts.push(this.tobePassed)
     console.log("posts ", this.posts)
-    console.log("try", this.image1, this.category1, this.title1, this.brand1, this.price1, this.description1)
-    alert("Successfull")
+
     form.form.reset()
   }
+  
+  
 
 }
