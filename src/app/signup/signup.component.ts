@@ -18,7 +18,6 @@ export class SignupComponent implements OnInit {
   public users: UserInformation
   public userList:any[]=[]
   showLogin: boolean = true;
-  dataArr: any[] = []
 
   constructor(private router: Router,private dataService: ApiService) {
     // this.users=[]
@@ -26,7 +25,7 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-    return this.dataService.shouldGetAllItem().subscribe(data => (this.dataArr = data));
+   
     
   }
   onSignUp() {

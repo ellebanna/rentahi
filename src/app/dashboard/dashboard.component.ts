@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Posts } from '../post-form';
+import { ApiService } from '../api.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,51 +10,15 @@ export class DashboardComponent implements OnInit {
   yes = false
   yesOrNo = true
   showNotification: boolean;
+  dataArr: any[] = []
 
-  public posts: Array<Posts>
 
-  constructor() {
-    this.posts = [
-      {
-        owner: 'hanna',
-        image: '../assets/shovel.jpg',
-        title: 'Shovel',
-        category: 'Sample',
-        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-        price: 100.00,
-        description: 'Sample Description'
-      },
-      {
-        owner: 'mibel',
-        image: '../assets/curler.jpg',
-        title: 'Hair Curler',
-        category: 'Sample',
-        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-        price: 100.00,
-        description: 'Sample Description'
-      },
-      {
-        owner: 'nabelle',
-        image: '../assets/tent.jpg',
-        title: 'Camping Tent',
-        category: 'Sample',
-        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-        price: 100.00,
-        description: 'Sample Description'
-      },
-      {
-        owner: 'username3',
-        image: '../assets/tent.jpg',
-        title: 'Tent',
-        category: 'Sample',
-        brand: 'Sample Brandsdfsfgdfgdhfhhdfsdhgshadsaf',
-        price: 100.00,
-        description: 'Sample Description'
-      },
-    ]
+  constructor(private dataService: ApiService) {
+
   }
 
   ngOnInit() {
+    return this.dataService.shouldGetAllItem().subscribe(data => (this.dataArr = data));
   }
 
   yesClicked() {
