@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Posts } from '../post-form';
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,6 +8,7 @@ import { Posts } from '../post-form';
 export class DashboardComponent implements OnInit {
   yes = false
   yesOrNo = true
+  showNotification: boolean;
 
   public posts: Array<Posts>
 
@@ -63,7 +63,13 @@ export class DashboardComponent implements OnInit {
 
   back() {
     this.yesOrNo = true
-    this.yes = false
+    this.yes = false;
+    this.showNotification = true;
+
+    // setTimeout(function () {
+    //   this.showNotification = true;
+    // }, 3000);
+
   }
 
 }

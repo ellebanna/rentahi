@@ -1,27 +1,27 @@
-.cards{
-    margin-top: 60px;
-    margin-left: 10px;
-    margin-right: 10px;
+.cards {
+  margin-top: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .md-pills .nav-link.active {
-    color: #fff;
-    background-color: #616161;
-  }
-  button.close {
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    padding-right: 1rem;
-    padding-top: .6rem;
-  }
-.center{
-    text-align: center;
+  color: #fff;
+  background-color: #616161;
 }
-.name{
-    margin-top: 10px;
-    margin-left: 10px;
+button.close {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  padding-right: 1rem;
+  padding-top: 0.6rem;
 }
-.image{
-    height: 250px;
-    width: auto;
+.center {
+  text-align: center;
+}
+.name {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.image {
+  height: 250px;
+  width: auto;
 }

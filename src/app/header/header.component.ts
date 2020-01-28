@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, timer } from 'rxjs';
+import { take, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  showNotification:boolean =false;  
+  
+  constructor() { 
   }
 
+  ngOnInit() {
+    
+  }
 }
