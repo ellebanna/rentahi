@@ -9,24 +9,18 @@
                 <!-- Grid row -->
                 <div class="row">
                     <h1>My Post</h1>
-                    <!-- Grid column -->
                     <div class="col-md-12 col-lg-4" *ngFor="let accounts of dataArr">
-                        <!-- Card -->
                         <a class="card hoverable mb-4" (click)="basicModal.show()" mdbWavesEffect>
-                            <!-- Card image -->
                             <p class="card-text mb-1 name">
                                 <mdb-icon far icon="user-circle"></mdb-icon> {{accounts.username.post}}
                             </p>
                             <img class="card-img-top image" [src]="post.image" alt="Card image cap">
-                            <!-- Card content -->
                             <div class="card-body">
                                 <h5 class="my-3"> {{accounts.title.post}}</h5>
                                 <p class="card-text mb-1">{{accounts.description.post}}</p>
                                 <p class="card-text mb-1">PHP {{post.price}}</p>
                             </div>
                         </a>
-                        <!-- Card -->
-                        <!-- Modal -->
                         <div mdbModal #basicModal="mdbModal" class="modal fade " tabindex="-1" role="dialog"
                             aria-labelledby="myBasicModalLabel" aria-hidden="true">
                             <div class="modal-dialog " role="document">
@@ -54,15 +48,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End of Modal -->
                     </div>
-                    <!-- Grid column -->
                 </div>
-                <!-- Grid row -->
             </div>
-            <!--Panel 1-->
         </div>
-        <!--Tab panels-->
     </section>
-    <!-- Section -->
 </div>
