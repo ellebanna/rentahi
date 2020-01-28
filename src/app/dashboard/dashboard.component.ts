@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Posts } from '../post-form';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,15 +9,17 @@ import { Posts } from '../post-form';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  id:number
+  public user: Array<any> = []
   yes = false
   yesOrNo = true
 
   public posts: Array<Posts>
 
-  constructor() {
+  constructor(private route : ActivatedRoute,private dataService: ApiService) {
     this.posts = [
       {
-        user: 'hanna',
+        username: 'hanna',
         image: '../assets/shovel.jpg',
         title: 'Shovel',
         category: 'Sample',
@@ -24,7 +28,7 @@ export class DashboardComponent implements OnInit {
         description: 'Sample Description'
       },
       {
-        user: 'mibel',
+        username: 'mibel',
         image: '../assets/curler.jpg',
         title: 'Hair Curler',
         category: 'Sample',
@@ -33,7 +37,7 @@ export class DashboardComponent implements OnInit {
         description: 'Sample Description'
       },
       {
-        user: 'nabelle',
+        username: 'nabelle',
         image: '../assets/tent.jpg',
         title: 'Camping Tent',
         category: 'Sample',
@@ -42,7 +46,7 @@ export class DashboardComponent implements OnInit {
         description: 'Sample Description'
       },
       {
-        user: 'username3',
+        username: 'username3',
         image: '../assets/tent.jpg',
         title: 'Tent',
         category: 'Sample',
@@ -54,16 +58,26 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.fetch()
+  }
+  fetch(id=1){
+    this.dataService.shouldCheckUsername(id).subscribe((data)=>{
+      console.log(data)
+      this.user.push(data)
+    })
   }
 
   yesClicked() {
+    console.log("user " ,this.user)
     this.yesOrNo = false
     this.yes = true
+   
   }
 
   back() {
     this.yesOrNo = true
     this.yes = false
   }
+  
 
 }

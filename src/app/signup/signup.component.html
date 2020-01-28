@@ -1,4 +1,4 @@
-<div style=" background-image:url('https://images.pexels.com/photos/327049/pexels-photo-327049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')!important;
+<div style=" background-image:url('https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')!important;
 background-size:cover;height: 657px;width: 100%;margin: 0;">
     <h1 id="title">Rentahi</h1>
     <p id="descriptionTitle">
@@ -8,7 +8,7 @@ background-size:cover;height: 657px;width: 100%;margin: 0;">
         <mdb-card style="width: 600px;">
             <!-- Default form login -->
             <!-- Default form register -->
-            <form class="text-center border border-light p-5"  (ngSubmit)="onSignUp(signUpForm)" #signUpForm="ngForm">
+            <form class="text-center border border-light p-5"  (ngSubmit)="onSignUp()" #signUpForm="ngForm">
 
                 <p class="h4 mb-4">Sign up</p>
 
@@ -86,7 +86,7 @@ background-size:cover;height: 657px;width: 100%;margin: 0;">
                     </div>
                 </div>
 
-                <button class="btn btn-info my-4 btn-block" [disabled]="!signUpForm.form.valid">Sign in</button>
+                <button class="btn btn-info my-4 btn-block" [disabled]="!signUpForm.form.valid" >Sign in</button>
                 <p>Already have an account?
                     <a routerLink="">Login</a>
                 </p>

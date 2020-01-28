@@ -1,5 +1,5 @@
 export class Posts{
-    user:string;
+    username:string;
     image: string;
     title: string;
     category:string;

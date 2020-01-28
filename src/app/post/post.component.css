@@ -26,3 +26,8 @@
     position: absolute;
     top: 145px!important;
 }
+.post{
+    background-color:#2E90C8;
+    font-size: 20px;
+    font-weight: bold;
+}

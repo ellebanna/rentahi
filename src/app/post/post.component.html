@@ -2,7 +2,7 @@
 <div class="container my-5">
     <form class="md-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
         <div class="file-field big">
-            <h1>What ar you listing today?</h1>
+            <h1>What are you listing today?</h1>
             <h4>Upload photo of your choosen item!</h4>
             <a class="btn-floating btn-lg light-blue lighten-4 darken-1 mt-0 float-left ">
                 <i class="fas fa-cloud-upload-alt size"></i>
@@ -66,6 +66,6 @@
             </div>
             <br><br>
         </div>
-        <button class="btn btn-info my-4 btn-block" [disabled]="!form.form.valid">Post</button>
+        <button class="btn post btn-block " [disabled]="!form.form.valid">Post</button>
     </form>
 </div>
