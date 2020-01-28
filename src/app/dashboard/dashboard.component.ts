@@ -34,7 +34,6 @@ export class DashboardComponent implements OnInit {
     // setTimeout(function () {
     //   this.showNotification = true;
     // }, 3000);
-
   }
 
 }

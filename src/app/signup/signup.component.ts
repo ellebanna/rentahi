@@ -29,7 +29,6 @@ export class SignupComponent implements OnInit {
     
   }
   onSignUp() {
-    console.log(this.dataArr);
     alert('Next step is to login to make sure you can login...')
     this.users = {
       firstname:this.firstname,
