@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor() {
     this.posts = [
       {
-        owner: 'hanna',
+        user: 'hanna',
         image: '../assets/shovel.jpg',
         title: 'Shovel',
         category: 'Sample',
@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
         description: 'Sample Description'
       },
       {
-        owner: 'mibel',
+        user: 'mibel',
         image: '../assets/curler.jpg',
         title: 'Hair Curler',
         category: 'Sample',
@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
         description: 'Sample Description'
       },
       {
-        owner: 'nabelle',
+        user: 'nabelle',
         image: '../assets/tent.jpg',
         title: 'Camping Tent',
         category: 'Sample',
@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
         description: 'Sample Description'
       },
       {
-        owner: 'username3',
+        user: 'username3',
         image: '../assets/tent.jpg',
         title: 'Tent',
         category: 'Sample',

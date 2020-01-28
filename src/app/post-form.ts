@@ -1,10 +1,9 @@
 export class Posts{
-    owner:string;
+    user:string;
     image: string;
     title: string;
     category:string;
     brand:string;
     price: number;
     description:string;
-
 }

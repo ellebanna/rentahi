@@ -1,0 +1,28 @@
+.big{
+    margin-left: 20px;
+    float: left;
+}
+.size{
+    width: 30px;
+    height: auto;
+}
+.right{
+    margin-right: 150px;
+    margin-top: 10px;
+    float: right;
+}
+.lenght{
+    width: 400px;
+}
+.notification{
+    color: red!important;
+    font-size: 15px;
+    position: absolute;
+    /* top: 35px!important; */
+}
+.notificationimage{
+    color: red!important;
+    font-size: 15px;
+    position: absolute;
+    top: 145px!important;
+}
