@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { PostComponent } from './post/post.component'
+import { HttpClientModule } from '@angular/common/http'; 
 const appRoutes: Routes = [
   {
     path:'',
@@ -44,7 +44,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+
 
   ],
   providers: [],
