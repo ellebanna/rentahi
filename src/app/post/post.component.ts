@@ -16,6 +16,8 @@ export class PostComponent implements OnInit {
   public user2:Array<UserInformation>=[]
   public tobePassed:Posts;
   public u:string
+  showpost = false
+
 
 
   image1: File
@@ -31,7 +33,7 @@ export class PostComponent implements OnInit {
     this.fetch()
   }
   fetch(id = 1) {
-    this.dataService.shouldCheckUsername(id).subscribe((data) => {
+    this.dataService.shouldCheckUsername(id).subscribe(data => {
       this.u = data.UserName
       this.user.push(data)
     })
@@ -52,8 +54,10 @@ export class PostComponent implements OnInit {
     this.posts.push(this.tobePassed)
     console.log("posts ", this.posts)
 
+
     form.form.reset()
   }
+
   
   
 

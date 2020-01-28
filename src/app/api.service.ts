@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { UserInformation } from './signup/users';
 import {itemModel} from './dashboard/item'
+import { Posts } from './post-form';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,6 +21,7 @@ const httpOptions = {
 export class ApiService {
   apiItem='http://localhost:3436/'
   apiUrl = "http://fakerestapi.azurewebsites.net/api/Users";
+  base = 'http://localhost:4000';
 
   constructor(private http: HttpClient) { }
 
@@ -35,5 +37,21 @@ export class ApiService {
   shouldCheckUsername(id: any): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/${id}`,httpOptions)
   }
-  
+
+  addPost(post: Posts): Observable<Posts> {
+    return this.http.post<Posts>(this.apiItem, post, httpOptions)
+  }
+
+   getUser( data) {
+    return this.http.get(`${this.base}/getUser`, data)  
+   }
+
+    UserRegistration (data) {
+    return this.http.post(`${this.base}/user/create`, data)
+  }
+
+  LoginService (data) {
+    return this.http.post(`${this.base}/login`, data)
+  }
+
 }

@@ -16,31 +16,39 @@ export class SignupComponent implements OnInit {
   contact: number;
   password: string;
   public users: UserInformation
-  public userList:any[]=[]
+  public userList: any[] = []
   showLogin: boolean = true;
 
-  constructor(private router: Router,private dataService: ApiService) {
+  public registerStatus: any
+
+
+  constructor(private router: Router, private dataService: ApiService) {
     // this.users=[]
     this.users = new UserInformation()
   }
 
   ngOnInit() {
-   
-    
+
+
   }
-  onSignUp() {
-    console.log(this.dataArr);
+  onSignUp  ()  {
+
     alert('Next step is to login to make sure you can login...')
     this.users = {
-      firstname:this.firstname,
+      firstname: this.firstname,
       lastname: this.lastname,
       email: this.email,
-      contact:this.contact,
-      username:this.username,
-      password:this.password
+      contact: this.contact,
+      username: this.username,
+      password: this.password
     }
-    this.userList.push(this.users)
-    console.log(this.userList);
-    this.router.navigate([''])
+    this.dataService.UserRegistration(this.users).subscribe(resp =>{
+      console.log("Successfull")
+      console.log("status",resp)
+    });
+      // this.userList.push(this.users)
+      console.log(this.users);
+      this.router.navigate([''])
+    
   }
 }

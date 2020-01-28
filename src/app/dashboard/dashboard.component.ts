@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   yesOrNo = true
   showNotification: boolean;
   dataArr: any[] = []
+  @Input() postsList: Array<Posts>;
 
 
   constructor(private dataService: ApiService) {
