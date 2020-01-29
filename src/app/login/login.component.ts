@@ -12,25 +12,16 @@ import { userDetails } from '../model';
 export class LoginComponent implements OnInit {
   private username: String;
   private password: String;
-<<<<<<< HEAD
   private user: any;
   public passId: Number;
   public usernamE = this.username;
   public users: userDetails
   showError = false;
-=======
-  dataArr: any[] = []
-  user = false
-  public loginuser: String;
-  // data: any
-
->>>>>>> af6ef08fbadf7238405de35290430f2ec9668155
   constructor(private router: Router, private dataService: ApiService) {
 
   }
 
   ngOnInit() {
-<<<<<<< HEAD
 
   }
 
@@ -54,32 +45,4 @@ export class LoginComponent implements OnInit {
     }
     )
   }
-=======
-    return this.dataService.shouldGetUser().subscribe(data => (this.dataArr = data, console.log(this.dataArr)));
-
-  }
-
-  login(id = 1) {
-    this.dataService.shouldCheckUsername(id).subscribe(response => {
-      if (response.UserName == this.username && response.Password == this.password) {
-        console.log("login ",this.username)
-        this.router.navigate(['/dashboard'])
-      } else {
-        alert('Account Not Found')
-      }
-    })
-
-  }
-  // login() {
-  //   this.data = {
-  //     userName: this.username,
-  //     password: this.password
-  //   }
-  //   this.dataService.LoginService(this.data).subscribe(resp => {
-  //     console.log("Successfull")
-  //   })
-  //   console.log("login ", this.username)
-  //   this.router.navigate(['/dashboard'])
-  // }
->>>>>>> af6ef08fbadf7238405de35290430f2ec9668155
 }

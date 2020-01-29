@@ -6,7 +6,7 @@
             <h4>Upload photo of your choosen item!</h4>
             <a class="btn-floating btn-lg light-blue lighten-4 darken-1 mt-0 float-left ">
                 <i class="fas fa-cloud-upload-alt size"></i>
-                <input type="file"  required name="image" [(ngModel)]="image1" #image2="ngModel" />
+                <input type="file" src="../assets/shovel.jpg" required name="image" [(ngModel)]="image1" #image2="ngModel" />
                 <div *ngIf="image2.invalid && (image2.dirty || image2.touched )" class="notificationimage">
                     <div *ngIf="image2.errors.required">
                         <p>Photo is required</p>
