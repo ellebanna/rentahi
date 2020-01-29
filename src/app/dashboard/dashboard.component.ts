@@ -14,14 +14,18 @@ export class DashboardComponent implements OnInit {
   yes = false
   yesOrNo = true
   showNotification: boolean;
-  dataArr: any[] = []
-  @Input() postsList: Array<Posts>;
+  // dataArr: any[] = []
+  public postsList:any [] = []
+  
 
   constructor(private dataService: ApiService) {
 
   }
 
   ngOnInit() {
+    return this.dataService.getAllPost().subscribe(data =>{ this.postsList = data
+      console.log("data ",this.postsList)
+    })
    
   }
 

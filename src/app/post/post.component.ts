@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+
   id: number
   public user: Array<any> = []
   public posts: Array<Posts> = []
@@ -23,7 +24,7 @@ export class PostComponent implements OnInit {
 
 
 
-  image1: File
+  image1: string
   category1: string
   title1: string
   brand1: string
@@ -46,7 +47,6 @@ export class PostComponent implements OnInit {
   post(form) {
     console.log("user post ", this.user)
     console.log("sahfjsahdfghdugjhhdfg ", this.u)
-  
     this.tobePassed={
       username: this.u,
       image: this.image1,
@@ -56,10 +56,16 @@ export class PostComponent implements OnInit {
       price: this.price1,
       description:this.description1
     }
+    this.dataService.addPost(this.tobePassed).subscribe(data =>{
+      console.log("postData ",data)
+    })
     this.posts.push(this.tobePassed)
     console.log("post ",this.posts)
+    alert("Already Posted")
     form.form.reset()
   }
+
+  
 
 
 

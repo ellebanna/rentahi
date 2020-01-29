@@ -18,7 +18,7 @@ const httpOptions = {
 })
 
 export  class ApiService {
-  apiItem = 'http://localhost:3436/'
+  apiItem = 'http://localhost:3000/post'
   apiUrl = "http://fakerestapi.azurewebsites.net/api/Users";
   
   
@@ -36,12 +36,15 @@ export  class ApiService {
     return this.http.get<any>(`${this.apiUrl}/${id}`, httpOptions)
   }
 
-  
-
   addPost(post: Posts): Observable<Posts> {
-    return this.http.post<Posts>(this.apiItem, post, httpOptions)
+    return this.http.post<Posts>(this.apiItem, post)
   }
+
   addUser(user: UserInformation): Observable<UserInformation> {
     return this.http.post<UserInformation>(this.apiItem, user, httpOptions)
+  }
+
+  getAllPost(): Observable<Posts[]> {
+    return this.http.get<Posts[]>(this.apiItem)
   }
 }
