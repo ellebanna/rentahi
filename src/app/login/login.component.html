@@ -16,6 +16,9 @@ background-size:cover;height: 657px;width: 100%;margin: 0;">
             <p>Not a member?
               <a routerLink="/signup">Register</a>
             </p>
+            <div *ngIf="showError" class="alert alert-danger" role="alert" >
+                Account Not Found.
+             </div>
           </form>
         </mdb-card>
     </div>

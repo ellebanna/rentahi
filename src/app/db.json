@@ -1,15 +1,91 @@
 {
-    "data" :[
-        {
-        "id": 1,
-        "name": "hannah Mae Pelinio",
-        "Address": "Bohol"
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Hannah",
+      "lastname": "Mae",
+      "email": "h@gmail.com",
+      "contact": "09452492469",
+      "username": "hannah",
+      "password": "passwordh"
     },
     {
-        "id": 2,
-        "name": "Annabelle Belcina",
-        "Address": "Dalaguete"
+      "id": 2,
+      "firstname": "Annabelle",
+      "lastname": "B",
+      "email": "a@gmail.com",
+      "contact": "09452492469",
+      "username": "annabelle",
+      "password": "passworda"
+    },
+    {
+      "id": 3,
+      "firstname": "Mibel",
+      "lastname": "P",
+      "email": "m@gmail.com",
+      "contact": "09452492469",
+      "username": "mibel",
+      "password": "passwordl"
+    },
+    {
+      "firstname": "anah",
+      "lastname": "Peliño",
+      "email": "sunit0004@gmail.com",
+      "contact": 213412,
+      "username": "newhannah",
+      "password": "password",
+      "id": 4
+    },
+    {
+      "firstname": "Hannah3",
+      "lastname": "test",
+      "email": "test@gmail.com",
+      "contact": 1232321,
+      "username": "test",
+      "password": "password",
+      "id": 5
     }
-]
-    
+  ],
+  "post": [
+    {
+      "id": 1,
+      "userId": 1,
+      "image": "../assets/shovel.jpg",
+      "title": "Shovel H",
+      "brand": "Yamaha",
+      "category": "Gardening",
+      "price": 200,
+      "description": "Sample description"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "image": "../assets/shovel.jpg",
+      "title": "Shovel H",
+      "brand": "Yamaha",
+      "category": "Gardening",
+      "price": 200,
+      "description": "Sample description"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "image": "../assets/shovel.jpg",
+      "title": "Shovel A",
+      "brand": "Yamaha",
+      "category": "Gardening",
+      "price": 200,
+      "description": "Sample description"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "image": "../assets/shovel.jpg",
+      "title": "Shovel A",
+      "brand": "Yamaha",
+      "category": "Gardening",
+      "price": 200,
+      "description": "Sample description"
+    }
+  ]
 }

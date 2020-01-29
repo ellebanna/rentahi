@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Posts } from '../post-form';
 import { ApiService } from '../api.service';
 @Component({
   selector: 'app-dashboard',
