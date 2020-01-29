@@ -9,12 +9,12 @@
                 <!-- Grid row -->
                 <div class="row">
                     <!-- Grid column -->
-                    <div class="col-md-12 col-lg-4" *ngFor="let post of dataArr">
+                    <div class="col-md-12 col-lg-4" *ngFor="let post of postsList">
                         <!-- Card -->
                         <a class="card hoverable mb-4" (click)="basicModal.show()" mdbWavesEffect>
                             <!-- Card image -->
                             <p class="card-text mb-1 name">
-                                <mdb-icon far icon="user-circle"></mdb-icon> {{post.owner}}
+                                <mdb-icon far icon="user-circle"></mdb-icon> {{post.username}}
                             </p>
                             <img class="card-img-top image" [src]="post.image" alt="Card image cap">
                             <!-- Card content -->
@@ -41,28 +41,32 @@
                                     </div>
                                     <div class="modal-footer">
                                         <div class="card-img-top ">
-                                            <div class="md-form">
+                                            <div class="md-form" *ngIf = "setdate">
                                                 <!-- <mdb-date-picker name="mydate" [options]="myDatePickerOptions" [placeholder]="'Selected date'" [(ngModel)]="model"
                                                 required></mdb-date-picker> -->
                                                 <form class="datestarted">
                                                     Date Started:
-                                                    <input type="date" name="bday">
+                                                    <input  type="date" name="start" [(ngModel)] = "start1" #start2 = "ngModel">
                                                     <br>
                                         
                                                 </form>
                                                 <br>
                                                 <form class="dateended">
                                                     Date Ended:
-                                                    <input type="date" name="bday">
+                                                    <input type="date" name="end" [(ngModel)] = "end1" #end2 = "ngModel">
                                                 </form>
                                             </div>  
+                                            <div *ngIf = "duedate">
+                                                <h3>Date of Rent Started: {{start1}}</h3>
+                                                <h3>Date of Rent Ended: {{end1}}</h3>
+                                            </div>
                                         </div>
                                     </div>
                                     <div *ngIf="yesOrNo" class="center">
                                         <button type="button" mdbBtn color="primary" class="relative waves-light"
                                             (click)="yesClicked()" mdbWavesEffect>Available</button>
                                         <button type="button" mdbBtn color="secondary" class="waves-light"
-                                            aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Not Available</button>
+                                            aria-label="Close" (click) = "back()" mdbWavesEffect>Not Available</button>
                                         <br><br>
                                     </div>
                                 </div>

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "users": [
     {
       "id": 1,
@@ -86,6 +87,48 @@
       "category": "Gardening",
       "price": 200,
       "description": "Sample description"
+=======
+  "post": [
+    {
+      "id": 1,
+      "username": "User 1",
+      "image": "../assets/shovel.jpg",
+      "title": "Shovel",
+      "category": "Sample",
+      "brand": "Sample",
+      "price": 123,
+      "description": "Sample"
+    },
+    {
+      "id": 2,
+      "username": "Annabelle",
+      "image": "../assets/curler.jpg",
+      "title": "Curler",
+      "category": "Beauty",
+      "brand": "JOke",
+      "price": 123,
+      "description": "String"
+    },
+    {
+      "id": 3,
+      "username": "User 1",
+      "image": "../assets/tent.jpg",
+      "title": "Tent",
+      "category": "Sample",
+      "brand": "Sample",
+      "price": 123,
+      "description": "Sample"
+    },
+    {
+      "username": "User 1",
+      "image": "C:\\fakepath\\2020-01-04.jpg",
+      "category": "Electronics",
+      "title": "ghfg",
+      "brand": "fhf",
+      "price": 243214,
+      "description": "fsdgdfsh",
+      "id": 4
+>>>>>>> af6ef08fbadf7238405de35290430f2ec9668155
     }
   ]
 }
