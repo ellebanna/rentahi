@@ -26,7 +26,6 @@ export class PostComponent implements OnInit {
   public user: Array<any> = []
   public posts: Array<Posts> = []
   public tobePassed: Posts;
-  showpost = false
 
   showImage = true
   ImageSource: string
@@ -40,6 +39,8 @@ export class PostComponent implements OnInit {
   description1: string
   dateStarted: string
   dateReturned: string
+
+
 
   public FileChangeEvent(fileInput: any) {
     this.showImage = false
@@ -56,6 +57,8 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
   }
+
+ 
 
   post(form) {
     const Username = sessionStorage.getItem("username");
@@ -79,4 +82,6 @@ export class PostComponent implements OnInit {
     alert("Already Posted")
     form.form.reset()
   }
+
+ 
 }

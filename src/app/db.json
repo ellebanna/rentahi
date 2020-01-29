@@ -78,16 +78,16 @@
       "dateReturned": ""
     },
     {
-      "id": 5,
       "username": "annabelle",
       "image": "../assets/camera.jpeg",
-      "title": "DSLR Camera",
-      "brand": "Canon",
       "category": "Others",
+      "title": "DSLR Camera E200",
+      "brand": "Canon",
       "price": 550,
       "description": "Sample description of camera",
       "dateStarted": "",
-      "dateReturned": ""
+      "dateReturned": "",
+      "id": 5
     },
     {
       "id": 6,

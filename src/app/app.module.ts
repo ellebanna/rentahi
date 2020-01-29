@@ -33,10 +33,6 @@ const appRoutes: Routes = [
   },
   {
     path:'mypost',
-    component:MypostComponent
-  },
-  {
-    path:'edit/:id',
     component:EditComponent
   }
 
