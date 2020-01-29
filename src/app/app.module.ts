@@ -11,7 +11,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { PostComponent } from './post/post.component'
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { MypostComponent } from './mypost/mypost.component'; 
 const appRoutes: Routes = [
   {
     path:'',
@@ -28,6 +29,10 @@ const appRoutes: Routes = [
   {
     path:'post',
     component:PostComponent
+  },
+  {
+    path:'mypost',
+    component:MypostComponent
   }
 
 ]
@@ -38,7 +43,8 @@ const appRoutes: Routes = [
     SignupComponent,
     DashboardComponent,
     HeaderComponent,
-    PostComponent
+    PostComponent,
+    MypostComponent
   ],
   imports: [
     BrowserModule,

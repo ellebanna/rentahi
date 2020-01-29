@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { UserInformation } from './signup/users';
-import { itemModel } from './dashboard/item'
 import { Posts } from './post-form';
 
 const httpOptions = {
@@ -25,20 +24,19 @@ export  class ApiService {
   
   constructor(private http: HttpClient) {
 
+
   }
 
   shouldGetUser(): Observable<any> {
-    return this.http.get<UserInformation[]>(this.apiUrl);
+    return this.http.get<UserInformation[]>(this.apiUrl+"/data");
   }
 
-
-  shouldGetAllItem(): Observable<any> {
-    return this.http.get<itemModel[]>(this.apiItem);
-  }
 
   shouldCheckUsername(id: any): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`, httpOptions)
   }
+
+  
 
   addPost(post: Posts): Observable<Posts> {
     return this.http.post<Posts>(this.apiItem, post, httpOptions)
