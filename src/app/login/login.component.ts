@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   private password: String;
   private user: any;
   public passId: Number;
+  public usernamE = this.username;
   public users: userDetails
   showError = false;
   constructor(private router: Router, private dataService: ApiService) {
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
       }
       res.forEach(element => {
         if (element.username == this.username) {
+          sessionStorage.setItem("username", this.username.toString())
           if (element.password == this.password) {
             this.router.navigate(['/dashboard'])
           }
