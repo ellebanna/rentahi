@@ -102,16 +102,16 @@
       "dateReturned": ""
     },
     {
-      "id": 7,
       "username": "annabelle",
       "image": "../assets/room.jpeg",
-      "title": "Room for rent",
-      "brand": "None",
       "category": "Others",
+      "title": "Room for rent 2",
+      "brand": "None",
       "price": 1200,
       "description": "Sample description of room",
       "dateStarted": "",
-      "dateReturned": ""
+      "dateReturned": "",
+      "id": 7
     },
     {
       "id": 8,
