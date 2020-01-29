@@ -43,4 +43,7 @@ export  class ApiService {
   addPost(post: Posts): Observable<Posts> {
     return this.http.post<Posts>(this.apiItem, post, httpOptions)
   }
+  addUser(user: UserInformation): Observable<UserInformation> {
+    return this.http.post<UserInformation>(this.apiItem, user, httpOptions)
+  }
 }
