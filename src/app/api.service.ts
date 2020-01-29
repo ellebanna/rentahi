@@ -49,4 +49,17 @@ export class ApiService {
   shouldCheckUsersPost(id: any): Observable<userDetails[]> {
     return this.http.get<userDetails[]>(this.apiUrl+ 'post/'+id , httpOptions);
   }
+
+  getEdit(id){
+    return this.http.get(this.apiUrl+ "/"+ id)
+  }
+
+  // //image upload
+  // uploadimage(image:File):Observable<Response> {
+  //   const formData = new FormData();
+
+  //   formData.append('image', image);
+
+  //   return this.http.post('/api/v1/image-upload', formData);
+  // }
 }

@@ -1,129 +1,140 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "firstname": "Hannah",
-            "lastname": "Mae",
-            "email": "h@gmail.com",
-            "contact": "09452492469",
-            "username": "hannah",
-            "password": "passwordh"
-        },
-        {
-            "id": 2,
-            "firstname": "Annabelle",
-            "lastname": "B",
-            "email": "a@gmail.com",
-            "contact": "09452492469",
-            "username": "annabelle",
-            "password": "passworda"
-        },
-        {
-            "id": 3,
-            "firstname": "Mibel",
-            "lastname": "P",
-            "email": "m@gmail.com",
-            "contact": "09452492469",
-            "username": "mibel",
-            "password": "passwordl"
-        }
-    ],
-    "post": [
-        {
-            "id": 1,
-            "username": "hannah",
-            "image": "../assets/van.jpeg",
-            "title": "Van",
-            "brand": "Nissan",
-            "category": "Others",
-            "price": 1000,
-            "description": "Sample description of Nissan van",
-            "dateStarted":"",
-            "dateReturned":""
-        },
-        {
-            "id": 2,
-            "username": "hannah",
-            "image": "../assets/shovel.jpg",
-            "title": "Shovel",
-            "brand": "Yamaha",
-            "category": "Gardening",
-            "price": 200,
-            "description": "Sample description of Yamaha Shovel",
-            "dateStarted":"",
-            "dateReturned":""
-        },
-        {
-            "id": 3,
-            "username": "mibel",
-            "image": "../assets/eyelashcurler.jpeg",
-            "title": "Eyelash Curler",
-            "brand": "Yamaha",
-            "category": "Beauty",
-            "price": 200,
-            "description": "Sample description",
-            "dateStarted":"",
-            "dateReturned":""
-        },
-        {
-            "id": 4,
-            "username": "mibel",
-            "image": "../assets/wig.jpeg",
-            "title": "Wig for party",
-            "brand": "None",
-            "category": "Beauty",
-            "price": 250,
-            "description": "Sample description of wig",
-            "dateStarted":"",
-            "dateReturned":""
-        },
-        {
-            "id": 5,
-            "username": "annabelle",
-            "image": "../assets/camera.jpeg",
-            "title": "DSLR Camera",
-            "brand": "Canon",
-            "category": "Others",
-            "price": 550,
-            "description": "Sample description of camera",
-            "dateStarted":"",
-            "dateReturned":""
-        },
-        {
-            "id": 6,
-            "username": "mibel",
-            "image": "../assets/boat.jpeg",
-            "title": "Boat",
-            "brand": "Yamaha",
-            "category": "Others",
-            "price": 5200,
-            "description": "Sample description of boat",
-            "dateStarted":"",
-            "dateReturned":""
-        },
-        {
-            "id": 7,
-            "username": "annabelle",
-            "image": "../assets/room.jpeg",
-            "title": "Room for rent",
-            "brand": "None",
-            "category": "Others",
-            "price": 1200,
-            "description": "Sample description of room",
-            "dateStarted":"",
-            "dateReturned":""
-        },
-        {
-            "id": 8,
-            "username": "mibel",
-            "image": "../assets/tent.jpg",
-            "title": "Tent",
-            "brand": "None",
-            "category": "Others",
-            "price": 1200,
-            "description": "Sample description of tent",
-            "dateStarted":"01/27/2020",
-            "dateReturned":"01/29/2020"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Hannah",
+      "lastname": "Mae",
+      "email": "h@gmail.com",
+      "contact": "09452492469",
+      "username": "hannah",
+      "password": "passwordh"
+    },
+    {
+      "id": 2,
+      "firstname": "Annabelle",
+      "lastname": "B",
+      "email": "a@gmail.com",
+      "contact": "09452492469",
+      "username": "annabelle",
+      "password": "passworda"
+    },
+    {
+      "id": 3,
+      "firstname": "Mibel",
+      "lastname": "P",
+      "email": "m@gmail.com",
+      "contact": "09452492469",
+      "username": "mibel",
+      "password": "passwordl"
+    }
+  ],
+  "post": [
+    {
+      "id": 1,
+      "username": "hannah",
+      "image": "../assets/van.jpeg",
+      "title": "Van",
+      "brand": "Nissan",
+      "category": "Others",
+      "price": 1000,
+      "description": "Sample description of Nissan van",
+      "dateStarted": "",
+      "dateReturned": ""
+    },
+    {
+      "id": 2,
+      "username": "hannah",
+      "image": "../assets/shovel.jpg",
+      "title": "Shovel",
+      "brand": "Yamaha",
+      "category": "Gardening",
+      "price": 200,
+      "description": "Sample description of Yamaha Shovel",
+      "dateStarted": "",
+      "dateReturned": ""
+    },
+    {
+      "id": 3,
+      "username": "mibel",
+      "image": "../assets/eyelashcurler.jpeg",
+      "title": "Eyelash Curler",
+      "brand": "Yamaha",
+      "category": "Beauty",
+      "price": 200,
+      "description": "Sample description",
+      "dateStarted": "",
+      "dateReturned": ""
+    },
+    {
+      "id": 4,
+      "username": "mibel",
+      "image": "../assets/wig.jpeg",
+      "title": "Wig for party",
+      "brand": "None",
+      "category": "Beauty",
+      "price": 250,
+      "description": "Sample description of wig",
+      "dateStarted": "",
+      "dateReturned": ""
+    },
+    {
+      "id": 5,
+      "username": "annabelle",
+      "image": "../assets/camera.jpeg",
+      "title": "DSLR Camera",
+      "brand": "Canon",
+      "category": "Others",
+      "price": 550,
+      "description": "Sample description of camera",
+      "dateStarted": "",
+      "dateReturned": ""
+    },
+    {
+      "id": 6,
+      "username": "mibel",
+      "image": "../assets/boat.jpeg",
+      "title": "Boat",
+      "brand": "Yamaha",
+      "category": "Others",
+      "price": 5200,
+      "description": "Sample description of boat",
+      "dateStarted": "",
+      "dateReturned": ""
+    },
+    {
+      "id": 7,
+      "username": "annabelle",
+      "image": "../assets/room.jpeg",
+      "title": "Room for rent",
+      "brand": "None",
+      "category": "Others",
+      "price": 1200,
+      "description": "Sample description of room",
+      "dateStarted": "",
+      "dateReturned": ""
+    },
+    {
+      "id": 8,
+      "username": "mibel",
+      "image": "../assets/tent.jpg",
+      "title": "Tent",
+      "brand": "None",
+      "category": "Others",
+      "price": 1200,
+      "description": "Sample description of tent",
+      "dateStarted": "01/27/2020",
+      "dateReturned": "01/29/2020"
+    },
+    {
+      "username": "hannah",
+      "image": "../assets/jacket.jpeg",
+      "category": "Health & Beauty",
+      "title": "dfasfd",
+      "brand": "fdsafds",
+      "price": 23424214,
+      "description": "Brand new yellowJacket",
+      "available": true,
+      "id": 9
+    }
+  ]
 }
