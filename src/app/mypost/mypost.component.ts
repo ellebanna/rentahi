@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { ApiService } from '../api.service';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
@@ -30,6 +30,11 @@ export class MypostComponent implements OnInit {
   setdate = true
   duedate = false
 
+
+  @Output() editPost = new EventEmitter()
+  @Output() toEditForm = new EventEmitter()
+  @Output() mypost = new EventEmitter()
+  
   constructor(private dataService: ApiService) {
 
   }
@@ -56,33 +61,21 @@ export class MypostComponent implements OnInit {
     })
   }
 
-  // fetch(id=1){
-  //   return this.dataService.shouldCheckUsername(id).subscribe(data =>{
-  //     this.u = data.UserName
-  //     console.log("mypost ",this.u)
-  //     this.dataService.getAllPost().subscribe(data =>{
-  //       console.log(data)
-  //       this.postsList = data
-
-  //     })
-  //   })
-
-  // }
-
   yesClicked() {
     this.setdate = true
     this.duedate = false
     this.end1 = ""
     this.start1 = ""
-    // this.yesOrNo = false
-    // this.yes = true
+
   }
 
-  back() {
-    this.setdate = false
-    this.duedate = true
-    // this.yesOrNo = true
-    // this.yes = false;
-    // this.showNotification = true;
+  notAvailableClicked(post){
+    this.toEditForm.emit(true)
+    this.mypost.emit(false)
+    console.log("toEditForm ",this.toEditForm );
+    
+    this.editPost.emit(post)
+    console.log("editPost ", this.editPost);
+    console.log("editPost ", post);  
   }
 }

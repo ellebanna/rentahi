@@ -17,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostComponent implements OnInit {
 
-  
+
 
 
   // try image upload
@@ -26,7 +26,6 @@ export class PostComponent implements OnInit {
   public user: Array<any> = []
   public posts: Array<Posts> = []
   public tobePassed: Posts;
-  showpost = false
 
   showImage = true
   ImageSource: string
@@ -38,6 +37,10 @@ export class PostComponent implements OnInit {
   brand1: string
   price1: number
   description1: string
+  dateStarted: string
+  dateReturned: string
+
+
 
   public FileChangeEvent(fileInput: any) {
     this.showImage = false
@@ -55,6 +58,8 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
+ 
+
   post(form) {
     const Username = sessionStorage.getItem("username");
     console.log("user post ", this.user)
@@ -66,14 +71,17 @@ export class PostComponent implements OnInit {
       brand: this.brand1,
       price: this.price1,
       description: this.description1,
-      available: true
+      dateStarted: this.dateStarted,
+      dateReturned: this.dateReturned
     }
-    this.dataService.shouldAddPost(this.tobePassed).subscribe(data =>{
-      console.log("postData ",data)
+    this.dataService.shouldAddPost(this.tobePassed).subscribe(data => {
+      console.log("postData ", data)
     })
     this.posts.push(this.tobePassed)
     console.log("post ", this.posts)
     alert("Already Posted")
     form.form.reset()
   }
+
+ 
 }

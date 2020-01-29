@@ -1,18 +1,21 @@
 <app-header></app-header>
-<div *ngIf = "formedit" class="container my-5">
+<div *ngIf = "toEditForm" class="container my-5">
     <form class="md-form" (ngSubmit)="post(form)" #form="ngForm">
         <div class="file-field big">
             <h1>What are you listing today?</h1>
-            <h4>Upload photo of your choosen item!</h4>
+            <!-- <h4>Upload photo of your choosen item!</h4>
             <a class="btn-floating btn-lg light-blue lighten-4 darken-1 mt-0 float-left ">
                 <i class="fas fa-cloud-upload-alt size"></i>
-                <input type="file"  required name="image" [(ngModel)]="image1" #image2="ngModel" />
+                <input type="file" (change)="FileChangeEvent($event)"  required name="image" [(ngModel)]="image1" #image2="ngModel" />
                 <div *ngIf="image2.invalid && (image2.dirty || image2.touched )" class="notificationimage">
                     <div *ngIf="image2.errors.required">
                         <p>Photo is required</p>
                     </div>
                 </div>
             </a>
+            <br>
+            <br> -->
+            <img [src]="ImageSource" style="width: 445px; height: 300px;" [hidden]="showImage">
         </div>
         <div class="right">
             <h4>Category: </h4>
@@ -69,5 +72,7 @@
         <button class="btn post btn-block " [disabled]="!form.form.valid">Post</button>
     </form>
 </div>
-
+<div *ngIf="mypost">
+    <app-mypost (editPost) = "acceptPostDetails($event)" (toEditForm) = "toEditForm = $event" (mypost) = "mypost = $event"></app-mypost>
+</div>
 
