@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserInformation } from './users'
+import { userDetails } from '../model'
 import { ApiService } from '../api.service';
 
 @Component({
@@ -9,22 +9,18 @@ import { ApiService } from '../api.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  firstname: string;
-  lastname: string;
-  email: string;
-  username: string;
-  contact: number;
-  password: string;
-  public users: UserInformation
-  public userList: any[] = []
+  firstname: String;
+  lastname: String;
+  email: String;
+  username: String;
+  contact: String;
+  password: String;
+  public users: userDetails
   showLogin: boolean = true;
-
-  public registerStatus: any
-
+  userDetails = { username: '', password: '',firstname:'',lastname:'',contact:'', email:'' }
 
   constructor(private router: Router, private dataService: ApiService) {
-    // this.users=[]
-    this.users = new UserInformation()
+    this.users = new userDetails()
   }
 
   ngOnInit() {
@@ -42,9 +38,9 @@ export class SignupComponent implements OnInit {
       username: this.username,
       password: this.password
     }
-    this.userList.push(this.users)
-    console.log(this.users);
-    this.router.navigate([''])
-
+    this.dataService.shouldAddUser(this.users).subscribe(data => {
+      console.log(data);
+      this.router.navigate([''])
+    })
   }
 }

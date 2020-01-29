@@ -17,16 +17,16 @@ const httpOptions = {
   styleUrls: ['./mypost.component.scss']
 })
 export class MypostComponent implements OnInit {
-
+  public userPost: String;
   yes = false
   yesOrNo = true
   showNotification: boolean;
   dataArr: any[] = []
-  u:string
-  postsList:any[]=[]
-
-  end1:string
-  start1:string
+  u: string
+  postsList: any[] = []
+  tempOwnPost: any[]=[]
+  end1: string
+  start1: string
   setdate = true
   duedate = false
 
@@ -38,26 +38,45 @@ export class MypostComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.fetch()
-  }
+    const username = sessionStorage.getItem("username");
 
-  fetch(id=1){
-    return this.dataService.shouldCheckUsername(id).subscribe(data =>{
-      this.u = data.UserName
-      console.log("mypost ",this.u)
-      this.dataService.getAllPost().subscribe(data =>{
-        console.log(data)
-        this.postsList = data
-        
+    this.dataService.shouldGetAllUser().subscribe(res => {
+      const a = Object.values(res);
+      res.forEach(element => {
+        if (element.username == username) {
+          this.userPost = element.username
+        }
       })
     })
-    
+    this.dataService.shouldGetAllPost().subscribe(response=>{
+      response.forEach(myItem=>{
+        if(myItem.username == username){
+          console.log(myItem);
+          this.postsList.push(myItem)
+          console.log(this.postsList);
+          
+        }
+      })
+    })
   }
+
+  // fetch(id=1){
+  //   return this.dataService.shouldCheckUsername(id).subscribe(data =>{
+  //     this.u = data.UserName
+  //     console.log("mypost ",this.u)
+  //     this.dataService.getAllPost().subscribe(data =>{
+  //       console.log(data)
+  //       this.postsList = data
+
+  //     })
+  //   })
+
+  // }
 
   yesClicked() {
     this.setdate = true
     this.duedate = false
-    this.end1 =""
+    this.end1 = ""
     this.start1 = ""
     // this.yesOrNo = false
     // this.yes = true
@@ -70,5 +89,4 @@ export class MypostComponent implements OnInit {
     // this.yes = false;
     // this.showNotification = true;
   }
-
 }

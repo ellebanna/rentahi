@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Posts } from '../post-form';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -23,7 +21,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    return this.dataService.getAllPost().subscribe(data =>{ this.postsList = data
+    return this.dataService.shouldGetAllPost().subscribe(data =>{ this.postsList = data
       console.log("data ",this.postsList)
     })
    

@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { UserInformation } from './signup/users';
+import { userDetails } from './model';
 import { Posts } from './post-form';
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': 'my-auth-token',
-    'Access-Control-Request-Headers': 'content-type',
-    'Access-Control-Request-Method': 'POST'
   })
 };
 
@@ -17,35 +15,39 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-export  class ApiService {
-  apiItem = 'http://localhost:3000/post'
-  apiUrl = "http://fakerestapi.azurewebsites.net/api/Users";
-  
+export class ApiService {
+  apiUrl = "http://localhost:3000/";
   
   constructor(private http: HttpClient) {
 
-
   }
 
-  shouldGetUser(): Observable<any> {
-    return this.http.get<UserInformation[]>(this.apiUrl+"/data");
+  shouldGetAllUser(): Observable<userDetails[]> {
+    return this.http.get<userDetails[]>(this.apiUrl+ 'users' , httpOptions);
   }
 
-
-  shouldCheckUsername(id: any): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`, httpOptions)
+  shouldAddUser(newUser: any): Observable<userDetails[]> {
+    return this.http.post<userDetails[]>(this.apiUrl+ 'users', JSON.stringify(newUser),httpOptions);
   }
 
-  addPost(post: Posts): Observable<Posts> {
-    return this.http.post<Posts>(this.apiItem, post)
+  shouldCheckUser(id: any): Observable<userDetails[]> {
+    return this.http.get<userDetails[]>(this.apiUrl+ 'users/'+id , httpOptions);
   }
 
-  addUser(user: UserInformation): Observable<UserInformation> {
-    return this.http.post<UserInformation>(this.apiItem, user, httpOptions)
+  shouldAddPost(post: any): Observable<Posts[]> {
+    return this.http.post<Posts[]>(this.apiUrl + 'post', JSON.stringify(post),httpOptions)
   }
 
-  getAllPost(): Observable<Posts[]> {
-    return this.http.get<Posts[]>(this.apiItem)
+  // addUser(user: UserInformation): Observable<UserInformation> {
+  //   return this.http.post<UserInformation>(this.apiItem, user, httpOptions)
+  // }
+
+  shouldGetAllPost(): Observable<userDetails[]> {
+    return this.http.get<userDetails[]>(this.apiUrl+ 'post' , httpOptions)
+  }
+
+  shouldCheckUsersPost(id: any): Observable<userDetails[]> {
+    return this.http.get<userDetails[]>(this.apiUrl+ 'post/'+id , httpOptions);
   }
 
   getEdit(id){
