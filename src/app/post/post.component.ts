@@ -17,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostComponent implements OnInit {
 
-  
+
 
 
   // try image upload
@@ -32,13 +32,14 @@ export class PostComponent implements OnInit {
   ImageSource: string
   CurrentFile: File
 
-
   image1: string
   category1: string
   title1: string
   brand1: string
   price1: number
   description1: string
+  dateStarted: string
+  dateReturned: string
 
   public FileChangeEvent(fileInput: any) {
     this.showImage = false
@@ -62,15 +63,16 @@ export class PostComponent implements OnInit {
     this.tobePassed = {
       username: Username,
       image: this.ImageSource,
-      category:this.category1,
+      category: this.category1,
       title: this.title1,
       brand: this.brand1,
       price: this.price1,
       description: this.description1,
-      available: true
+      dateStarted: this.dateStarted,
+      dateReturned: this.dateReturned
     }
-    this.dataService.shouldAddPost(this.tobePassed).subscribe(data =>{
-      console.log("postData ",data)
+    this.dataService.shouldAddPost(this.tobePassed).subscribe(data => {
+      console.log("postData ", data)
     })
     this.posts.push(this.tobePassed)
     console.log("post ", this.posts)
