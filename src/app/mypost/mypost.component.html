@@ -23,10 +23,10 @@
                                 <p class="card-text mb-1">PHP {{post.price}}</p>
                             </div>
                             <div class="center">
-                                <button type="button" mdbBtn color="primary" class="relative waves-light"
-                                    (click)="delete()" mdbWavesEffect>Delete</button>
-                                    <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+                                <button type="button" mdbBtn color="primary" class="waves-light" aria-label="Close"
                                     (click)="notAvailableClicked(post)" mdbWavesEffect>Edit Item</button>
+                                <button type="button" mdbBtn color="danger" class="relative waves-light"
+                                    (click)="delete(post.id)" mdbWavesEffect>Delete</button>
                                 <br><br>
                             </div>
                         </a>

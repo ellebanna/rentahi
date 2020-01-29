@@ -1,6 +1,8 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { ApiService } from '../api.service';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Posts } from '../post-form';
+import { Router } from '@angular/router';
 
 
 const httpOptions = {
@@ -24,26 +26,24 @@ export class MypostComponent implements OnInit {
   dataArr: any[] = []
   u: string
   postsList: any[] = []
-  tempOwnPost: any[]=[]
+  tempOwnPost: any[] = []
   end1: string
   start1: string
   setdate = true
   duedate = false
+  postModel:Posts[] = []
+
 
   @Output() editPost = new EventEmitter()
   @Output() toEditForm = new EventEmitter()
   @Output() mypost = new EventEmitter()
-
-
-
-
-  constructor(private dataService: ApiService) {
+  
+  constructor(private router: Router,private dataService: ApiService) {
 
   }
 
   ngOnInit() {
     const username = sessionStorage.getItem("username");
-
     this.dataService.shouldGetAllUser().subscribe(res => {
       const a = Object.values(res);
       res.forEach(element => {
@@ -52,25 +52,28 @@ export class MypostComponent implements OnInit {
         }
       })
     })
-    this.dataService.shouldGetAllPost().subscribe(response=>{
-      response.forEach(myItem=>{
-        if(myItem.username == username){
+
+    this.dataService.shouldGetAllPost().subscribe(response => {
+      response.forEach(myItem => {
+        if (myItem.username == username) {
           console.log(myItem);
           this.postsList.push(myItem)
           console.log(this.postsList);
-          
         }
       })
     })
   }
 
-  yesClicked() {
-    this.setdate = true
-    this.duedate = false
-    this.end1 = ""
-    this.start1 = ""
-
+  loadData(){
+    return this.dataService.shouldGetAllPost().subscribe(data =>{this.postsList = data})
   }
+
+  delete(data) {
+    this.dataService.deletePost(data).subscribe(response => this.loadData)
+    this.router.navigate(['/dashboard'])
+  }
+
+  
 
   notAvailableClicked(post){
     this.toEditForm.emit(true)

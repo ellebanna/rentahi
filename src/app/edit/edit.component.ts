@@ -56,7 +56,7 @@ public getData: any = {}
   }
 
   ngOnInit() {
-    this.dataService.getPostById(this.post).subscribe(data =>{
+    this.dataService.getPostById(this.posts).subscribe(data =>{
       this.getData = data
     })
   }

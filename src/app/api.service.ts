@@ -62,4 +62,8 @@ export class ApiService {
     return this.http.get(this.apiUrl+ "/"+ id)
   }
 
+  deletePost(id): Observable<userDetails[]>{
+    return this.http.delete<userDetails[]>(this.apiUrl+ 'post/'+id , httpOptions);
+  }
+
 }

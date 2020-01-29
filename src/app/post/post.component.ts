@@ -66,7 +66,7 @@ export class PostComponent implements OnInit {
     this.tobePassed = {
       username: Username,
       image: this.ImageSource,
-      category: this.category1,
+      category:this.category1,
       title: this.title1,
       brand: this.brand1,
       price: this.price1,
