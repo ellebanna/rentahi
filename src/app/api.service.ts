@@ -47,4 +47,17 @@ export  class ApiService {
   getAllPost(): Observable<Posts[]> {
     return this.http.get<Posts[]>(this.apiItem)
   }
+
+  getEdit(id){
+    return this.http.get(this.apiUrl+ "/"+ id)
+  }
+
+  // //image upload
+  // uploadimage(image:File):Observable<Response> {
+  //   const formData = new FormData();
+
+  //   formData.append('image', image);
+
+  //   return this.http.post('/api/v1/image-upload', formData);
+  // }
 }

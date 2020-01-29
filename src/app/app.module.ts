@@ -12,8 +12,8 @@ import { DashboardComponent} from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { PostComponent } from './post/post.component'
 import { HttpClientModule } from '@angular/common/http';
-import { MypostComponent } from './mypost/mypost.component';
-import { EditComponent } from './edit/edit.component'; 
+import { MypostComponent } from './mypost/mypost.component'; 
+import { EditComponent } from './edit/edit.component';
 const appRoutes: Routes = [
   {
     path:'',
@@ -34,6 +34,10 @@ const appRoutes: Routes = [
   {
     path:'mypost',
     component:MypostComponent
+  },
+  {
+    path:'edit/:id',
+    component:EditComponent
   }
 
 ]

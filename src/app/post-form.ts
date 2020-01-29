@@ -6,4 +6,5 @@ export class Posts{
     brand:String;
     price: Number;
     description:String;
+    available: Boolean
 }
