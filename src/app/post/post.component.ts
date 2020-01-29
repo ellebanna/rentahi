@@ -60,7 +60,7 @@ export class PostComponent implements OnInit {
     console.log("user post ", this.user)
     this.tobePassed = {
       username: Username,
-      image: this.image1,
+      image: this.ImageSource,
       category:this.category1,
       title: this.title1,
       brand: this.brand1,

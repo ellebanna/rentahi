@@ -8,13 +8,6 @@
                 <i class="fas fa-cloud-upload-alt size"></i>
                 <input type="file" (change)="FileChangeEvent($event)" required name="image" [(ngModel)]="image1"
                     #image2="ngModel" />
-                <!-- Try image upload -->
-                <!-- <label class="image-upload-container btn btn-bwm">
-                    <span>Select Image</span>
-                    <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)">
-                </label> -->
-                <!-- End Try image upload -->
-
                 <div *ngIf="image2.invalid && (image2.dirty || image2.touched )" class="notificationimage">
                     <div *ngIf="image2.errors.required">
                         <p>Photo is required</p>

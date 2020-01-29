@@ -24,14 +24,11 @@ export class MypostComponent implements OnInit {
   dataArr: any[] = []
   u: string
   postsList: any[] = []
-  tempOwnPost: any[]=[]
+  tempOwnPost: any[] = []
   end1: string
   start1: string
   setdate = true
   duedate = false
-
-
-
 
   constructor(private dataService: ApiService) {
 
@@ -39,7 +36,6 @@ export class MypostComponent implements OnInit {
 
   ngOnInit() {
     const username = sessionStorage.getItem("username");
-
     this.dataService.shouldGetAllUser().subscribe(res => {
       const a = Object.values(res);
       res.forEach(element => {
@@ -48,13 +44,13 @@ export class MypostComponent implements OnInit {
         }
       })
     })
-    this.dataService.shouldGetAllPost().subscribe(response=>{
-      response.forEach(myItem=>{
-        if(myItem.username == username){
+
+    this.dataService.shouldGetAllPost().subscribe(response => {
+      response.forEach(myItem => {
+        if (myItem.username == username) {
           console.log(myItem);
           this.postsList.push(myItem)
           console.log(this.postsList);
-          
         }
       })
     })
